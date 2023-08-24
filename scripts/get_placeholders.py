@@ -1,4 +1,12 @@
 def find_placeholder(document, required):
+    '''
+    Finds the given placeholder in the document
+    Args:
+    - document (dict): document object to filter
+    - required (string): The placeholder required
+    Returns:
+    - Tuple containing the start and end indices of the placeholder
+    '''
     for i in document.get('body')['content']:
         # print(i.keys())
         if 'paragraph' in i.keys():

@@ -6,7 +6,14 @@ from delete_content import delete_placeholder
 
 
 def add_about_me(text: list, is_bullet: bool, document_id: int, creds):
-
+    '''
+    Adds the given text into the ABOUT ME placeholder.
+    Args:
+    - text (string): the text to add
+    - is_bullet (boolean): If the text being added is a bullet point
+    - document_id (string): The ID of the document
+    - creds: OAuth credentials
+    '''
     for t in text:
         indices=find_placeholder(find_document(document_id, creds), 'ABOUT ME')
         assert indices is not None, 'Placeholder not found'
@@ -46,7 +53,14 @@ def add_about_me(text: list, is_bullet: bool, document_id: int, creds):
     delete_placeholder('ABOUT ME', is_bullet, document_id, creds)
 
 def add_summary_points(text: list, is_bullet: bool, document_id: int, creds):
-
+    '''
+    Adds the given text into the SUMMARY placeholder.
+    Args:
+    - text (string): the text to add
+    - is_bullet (boolean): If the text being added is a bullet point
+    - document_id (string): The ID of the document
+    - creds: OAuth credentials
+    '''
     for t in text:
         indices=find_placeholder(find_document(document_id, creds), 'SUMMARY POINTS')
         assert indices is not None, 'Placeholder not found'
@@ -86,7 +100,14 @@ def add_summary_points(text: list, is_bullet: bool, document_id: int, creds):
     delete_placeholder('SUMMARY POINTS', is_bullet, document_id, creds)
 
 def add_languages(text: list, is_bullet: bool, document_id:str, creds):
-
+    '''
+    Adds the given text into the LANGUAGES placeholder.
+    Args:
+    - text (string): the text to add
+    - is_bullet (boolean): If the text being added is a bullet point
+    - document_id (string): The ID of the document
+    - creds: OAuth credentials
+    '''
     for t in text:
         indices=find_placeholder(find_document(document_id, creds), 'LANGUAGES')
         assert indices is not None, 'Placeholder not found'
@@ -126,6 +147,15 @@ def add_languages(text: list, is_bullet: bool, document_id:str, creds):
     delete_placeholder('LANGUAGES', is_bullet, document_id, creds)
 
 def add_responsibility(text: list, is_bullet: bool, document_id: str, creds, n: int):
+    '''
+    Adds the given text into the RESPONSIBILITIES placeholder.
+    Args:
+    - text (string): the text to add
+    - is_bullet (boolean): If the text being added is a bullet point
+    - document_id (string): The ID of the document
+    - creds: OAuth credentials
+    - n (int): Number corresponding to responsibility
+    '''
     for t in text:
         indices=find_placeholder(find_document(document_id, creds), f'RESPONSIBILITIES {n}')
         assert indices is not None, 'Placeholder not found'

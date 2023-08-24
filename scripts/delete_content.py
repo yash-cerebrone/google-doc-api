@@ -4,6 +4,14 @@ from get_document import find_document
 from googleapiclient.errors import HttpError
 
 def delete_placeholder(text, is_bullet, document_id, creds):
+    '''
+    Deletes the placeholder text
+    Args:
+    - text (string): Placeholder text to delete
+    - is_bullet (boolean): To check if the text to delete is a bullet point
+    - document_id (string): The ID of the document
+    - creds: OAuth credentials
+    '''
     indices=find_placeholder(find_document(document_id, creds), text)
     try:
         assert(indices is not None)

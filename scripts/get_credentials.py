@@ -12,6 +12,11 @@ import shutil
 import os.path
 
 def main():
+    '''
+    Obtain credentials from the json files or OAuth portal (1st time)
+    Returns:
+    - credentials object
+    '''
     """Shows basic usage of the Docs API.
     Prints the title of a sample document.
     """
